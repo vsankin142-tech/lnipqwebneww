@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ПРИЗМА — цифровая студия дизайна и разработки</title>
+  <meta name="description" content="ПРИЗМА — цифровая студия полного цикла. Брендинг, веб-дизайн, разработка и motion. Создаём цифровые продукты, которые запоминаются.">
+  <meta property="og:title" content="ПРИЗМА — цифровая студия">
+  <meta property="og:description" content="Брендинг, веб-дизайн, разработка и motion. Создаём цифровые продукты, которые запоминаются.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%23ff4ecd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M50 10 L90 80 L10 80 Z' fill='url(%23g)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-loading">
+
+  <!-- ======= PRELOADER ======= -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__panels">
+      <span class="preloader__panel"></span>
+      <span class="preloader__panel"></span>
+    </div>
+    <div class="preloader__inner">
+      <div class="preloader__logo" id="preloaderLogo">ПРИЗМА</div>
+      <div class="preloader__meta">
+        <span class="preloader__label">цифровая студия</span>
+        <span class="preloader__counter" id="preloaderCounter">000</span>
+      </div>
+    </div>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
+  </div>
+
+  <!-- ======= CURSOR ======= -->
+  <div class="cursor" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor__ring" id="cursorRing" aria-hidden="true"><span class="cursor__label">Смотреть</span></div>
+
+  <!-- ======= PROGRESS ======= -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ======= NOISE OVERLAY ======= -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ======= NAV ======= -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#hero">
+      <svg class="nav__logo-mark" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#ff4ecd"/></linearGradient></defs><path d="M50 10 L90 80 L10 80 Z" fill="url(#lg)"/></svg>
+      <span>ПРИЗМА</span>
+    </a>
+    <nav class="nav__menu" aria-label="Основное меню">
+      <a href="#about" class="nav__link">Студия</a>
+      <a href="#services" class="nav__link">Услуги</a>
+      <a href="#works" class="nav__link">Кейсы</a>
+      <a href="#process" class="nav__link">Процесс</a>
+      <a href="#reviews" class="nav__link">Отзывы</a>
+    </nav>
+    <a href="#contact" class="btn btn--primary btn--sm nav__cta magnetic">Обсудить проект</a>
+    <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ======= MOBILE MENU ======= -->
+  <div class="mmenu" id="mmenu" aria-hidden="true">
+    <nav class="mmenu__nav" aria-label="Мобильное меню">
+      <a href="#about" class="mmenu__link"><i>01</i>Студия</a>
+      <a href="#services" class="mmenu__link"><i>02</i>Услуги</a>
+      <a href="#works" class="mmenu__link"><i>03</i>Кейсы</a>
+      <a href="#process" class="mmenu__link"><i>04</i>Процесс</a>
+      <a href="#reviews" class="mmenu__link"><i>05</i>Отзывы</a>
+      <a href="#contact" class="mmenu__link"><i>06</i>Контакты</a>
+    </nav>
+    <div class="mmenu__foot">
+      <a href="mailto:hello@prizma.studio">hello@prizma.studio</a>
+      <div class="mmenu__soc">
+        <a href="#">TG</a><a href="#">BE</a><a href="#">DR</a><a href="#">GH</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= SMOOTH CONTENT ======= -->
+  <div class="page" id="smoothContent">
+    <main>
+
+      <!-- ======= HERO ======= -->
+      <section class="hero" id="hero">
+        <canvas id="particles" aria-hidden="true"></canvas>
+        <div class="aurora aurora--1" data-speed="0.12" aria-hidden="true"></div>
+        <div class="aurora aurora--2" data-speed="0.2" aria-hidden="true"></div>
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <div class="hero__ring" data-speed="0.25" aria-hidden="true"></div>
+        <span class="hero__spark hero__spark--1" data-speed="0.3" aria-hidden="true">✦</span>
+        <span class="hero__spark hero__spark--2" data-speed="0.45" aria-hidden="true">✦</span>
+        <span class="hero__spark hero__spark--3" data-speed="0.35" aria-hidden="true">+</span>
+
+        <div class="hero__inner">
+          <div class="hero__badge hero-reveal" style="--d:.1s">
+            <span class="hero__badge-dot"></span>
+            Цифровая студия полного цикла · Москва
+          </div>
+
+          <h1 class="hero__title" data-split>Создаём <span class="grad">цифровые</span> продукты,<br>которые <span class="grad grad--2">запоминаются</span></h1>
+
+          <p class="hero__sub hero-reveal" style="--d:.5s">
+            Брендинг, веб-дизайн, разработка и motion — превращаем посетителей
+            в поклонников, а идеи — в работающие продукты.
+          </p>
+
+          <div class="hero__actions hero-reveal" style="--d:.65s">
+            <a href="#works" class="btn btn--primary magnetic">Смотреть кейсы <span class="btn__arrow">→</span></a>
+            <a href="#contact" class="btn btn--ghost magnetic">Обсудить проект</a>
+          </div>
+
+          <div class="hero__stats hero-reveal" style="--d:.8s">
+            <div class="stat">
+              <span class="stat__num"><span class="num" data-count="140">0</span>+</span>
+              <span class="stat__label">проектов запущено</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num"><span class="num" data-count="12">0</span></span>
+              <span class="stat__label">лет на рынке</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num"><span class="num" data-count="27">0</span></span>
+              <span class="stat__label">наград и премий</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num"><span class="num" data-count="98">0</span>%</span>
+              <span class="stat__label">клиентов возвращаются</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span>скролл</span><i></i>
+        </div>
+      </section>
+
+      <!-- ======= MARQUEE ======= -->
+      <section class="marquee-block" aria-hidden="true">
+        <div class="marquee">
+          <div class="marquee__track">
+            <span>Брендинг</span><i>✦</i><span>Веб-дизайн</span><i>✦</i><span>Разработка</span><i>✦</i><span>Motion</span><i>✦</i><span>3D</span><i>✦</i><span>SEO &amp; Growth</span><i>✦</i>
+            <span>Брендинг</span><i>✦</i><span>Веб-дизайн</span><i>✦</i><span>Разработка</span><i>✦</i><span>Motion</span><i>✦</i><span>3D</span><i>✦</i><span>SEO &amp; Growth</span><i>✦</i>
+          </div>
+        </div>
+        <div class="marquee marquee--reverse">
+          <div class="marquee__track marquee__track--outline">
+            <span>PRIZMA DIGITAL STUDIO</span><i>✦</i><span>ДИЗАЙН</span><i>✦</i><span>КОД</span><i>✦</i><span>ДВИЖЕНИЕ</span><i>✦</i><span>СТРАТЕГИЯ</span><i>✦</i>
+            <span>PRIZMA DIGITAL STUDIO</span><i>✦</i><span>ДИЗАЙН</span><i>✦</i><span>КОД</span><i>✦</i><span>ДВИЖЕНИЕ</span><i>✦</i><span>СТРАТЕГИЯ</span><i>✦</i>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= ABOUT ======= -->
+      <section class="section about" id="about">
+        <div class="section-head">
+          <span class="section-head__num" data-reveal>01</span>
+          <span class="section-head__line" data-reveal style="--rd:.1s"></span>
+          <h2 class="section-head__title" data-reveal style="--rd:.15s">Студия, в которой<br><span class="grad">рождается цифра</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__lead" data-reveal>
+            <p class="about__big">
+              Мы — команда дизайнеров, разработчиков и моушн-художников,
+              которая верит: <em>красивое работает</em>, а <em>работающее — запоминается</em>.
+            </p>
+          </div>
+          <div class="about__side">
+            <p data-reveal style="--rd:.1s">
+              С 2014 года мы строим цифровые продукты для стартапов и крупных брендов:
+              от айдентики до продакшн-кода. Не шаблоны — только авторские решения,
+              протестированные метриками.
+            </p>
+            <p data-reveal style="--rd:.2s">
+              Каждый проект ведёт арт-директор, а результат измеряется не «понравилось»,
+              а конверсией, скоростью загрузки и NPS.
+            </p>
+            <div class="about__chips" data-reveal style="--rd:.3s">
+              <span class="chip">Product Design</span>
+              <span class="chip">WebGL / 3D</span>
+              <span class="chip">UX-исследования</span>
+              <span class="chip">Высокая нагрузка</span>
+              <span class="chip">A/B-тесты</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__facts">
+          <div class="fact" data-reveal>
+            <span class="fact__num"><span class="num" data-count="42">0</span></span>
+            <span class="fact__label">человека в команде</span>
+          </div>
+          <div class="fact" data-reveal style="--rd:.1s">
+            <span class="fact__num"><span class="num" data-count="15">0</span></span>
+            <span class="fact__label">стран, где работают наши продукты</span>
+          </div>
+          <div class="fact" data-reveal style="--rd:.2s">
+            <span class="fact__num"><span class="num" data-count="6">0</span>×</span>
+            <span class="fact__label">средний рост конверсии после редизайна</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= SERVICES ======= -->
+      <section class="section services" id="services">
+        <div class="section-head">
+          <span class="section-head__num" data-reveal>02</span>
+          <span class="section-head__line" data-reveal style="--rd:.1s"></span>
+          <h2 class="section-head__title" data-reveal style="--rd:.15s">Что мы <span class="grad">умеем</span></h2>
+        </div>
+
+        <div class="services__grid">
+          <article class="service tilt" data-reveal data-cursor="hover">
+            <span class="service__num">01</span>
+            <div class="service__icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L40 16 V32 L24 42 L8 32 V16 Z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="24" r="5" fill="currentColor"/></svg>
+            </div>
+            <h3 class="service__title">Брендинг</h3>
+            <p class="service__text">Айдентика, визуальный код, гайдлайны и тон коммуникации. Бренд, который узнают с одного экрана.</p>
+            <span class="service__tags"><i>Логотип</i><i>Айдентика</i><i>Гайдлайны</i></span>
+          </article>
+
+          <article class="service tilt" data-reveal style="--rd:.08s" data-cursor="hover">
+            <span class="service__num">02</span>
+            <div class="service__icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="10" width="32" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M18 40 H30 M24 34 V40" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+            </div>
+            <h3 class="service__title">Веб-дизайн</h3>
+            <p class="service__text">Лендинги, корпоративные сайты и e-commerce. Дизайн-системы, которые масштабируются без боли.</p>
+            <span class="service__tags"><i>UI/UX</i><i>Дизайн-системы</i><i>E-commerce</i></span>
+          </article>
+
+          <article class="service tilt" data-reveal style="--rd:.16s" data-cursor="hover">
+            <span class="service__num">03</span>
+            <div class="service__icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 14 L6 24 L18 34 M30 14 L42 24 L30 34 M28 10 L20 38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="service__title">Разработка</h3>
+            <p class="service__text">React, Next.js, Node.js. Лighthouse 95+, микросекунды до первого пикселя, архитектура под рост.</p>
+            <span class="service__tags"><i>Frontend</i><i>Backend</i><i>Performance</i></span>
+          </article>
+
+          <article class="service tilt" data-reveal style="--rd:.24s" data-cursor="hover">
+            <span class="service__num">04</span>
+            <div class="service__icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M24 8 V24 L34 30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="service__title">Motion &amp; 3D</h3>
+            <p class="service__text">Анимации интерфейса, 3D-сцены, WebGL и видеопромо. Живой сайт — сайт, который покупают.</p>
+            <span class="service__tags"><i>WebGL</i><i>3D</i><i>Прототипы</i></span>
+          </article>
+
+          <article class="service tilt" data-reveal style="--rd:.32s" data-cursor="hover">
+            <span class="service__num">05</span>
+            <div class="service__icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 38 L20 26 L28 32 L40 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 14 H40 V22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="service__title">SEO &amp; Growth</h3>
+            <p class="service__text">Технический SEO, аналитика, A/B-тесты и growth-стратегия. Красота, подтверждённая цифрами.</p>
+            <span class="service__tags"><i>SEO</i><i>Аналитика</i><i>A/B-тесты</i></span>
+          </article>
+
+          <article class="service tilt service--accent" data-reveal style="--rd:.4s" data-cursor="hover">
+            <span class="service__num">06</span>
+            <div class="service__icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L38 12 V24 C38 33 32 39 24 42 C16 39 10 33 10 24 V12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M17 24 L22 29 L31 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="service__title">Поддержка</h3>
+            <p class="service__text">SLA-реакция, мониторинг 24/7, гипотезы и улучшения каждый спринт. Продукт живёт и растёт.</p>
+            <span class="service__tags"><i>SLA 24/7</i><i>Мониторинг</i><i>Итерации</i></span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======= WORKS ======= -->
+      <section class="section works" id="works">
+        <div class="section-head">
+          <span class="section-head__num" data-reveal>03</span>
+          <span class="section-head__line" data-reveal style="--rd:.1s"></span>
+          <h2 class="section-head__title" data-reveal style="--rd:.15s">Избранные <span class="grad">кейсы</span></h2>
+        </div>
+
+        <div class="works__grid">
+          <a href="#contact" class="work tilt" data-reveal data-cursor="view">
+            <div class="work__cover work__cover--aura">
+              <span class="work__ghost" aria-hidden="true">A</span>
+              <span class="work__tag">E-commerce</span>
+              <span class="work__year">2026</span>
+            </div>
+            <div class="work__foot">
+              <h3 class="work__title">AURA — магазин моды</h3>
+              <span class="work__result">+240% конверсия</span>
+              <span class="work__arrow">→</span>
+            </div>
+          </a>
+
+          <a href="#contact" class="work tilt" data-reveal style="--rd:.1s" data-cursor="view">
+            <div class="work__cover work__cover--nebula">
+              <span class="work__ghost" aria-hidden="true">N</span>
+              <span class="work__tag">SaaS-платформа</span>
+              <span class="work__year">2025</span>
+            </div>
+            <div class="work__foot">
+              <h3 class="work__title">NEBULA — аналитика для финтеха</h3>
+              <span class="work__result">×3 удержание</span>
+              <span class="work__arrow">→</span>
+            </div>
+          </a>
+
+          <a href="#contact" class="work tilt" data-reveal style="--rd:.15s" data-cursor="view">
+            <div class="work__cover work__cover--kosmo">
+              <span class="work__ghost" aria-hidden="true">K</span>
+              <span class="work__tag">Технологичный стартап</span>
+              <span class="work__year">2025</span>
+            </div>
+            <div class="work__foot">
+              <h3 class="work__title">KOSMO — лендинг раунда</h3>
+              <span class="work__result">$12M собраны</span>
+              <span class="work__arrow">→</span>
+            </div>
+          </a>
+
+          <a href="#contact" class="work tilt" data-reveal style="--rd:.25s" data-cursor="view">
+            <div class="work__cover work__cover--orbita">
+              <span class="work__ghost" aria-hidden="true">O</span>
+              <span class="work__tag">Мобильное приложение</span>
+              <span class="work__year">2024</span>
+            </div>
+            <div class="work__foot">
+              <h3 class="work__title">ORBITA — доставка 30 минут</h3>
+              <span class="work__result">4.9 в сторах</span>
+              <span class="work__arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ======= PROCESS ======= -->
+      <section class="section process" id="process">
+        <div class="section-head">
+          <span class="section-head__num" data-reveal>04</span>
+          <span class="section-head__line" data-reveal style="--rd:.1s"></span>
+          <h2 class="section-head__title" data-reveal style="--rd:.15s">Как мы <span class="grad">работаем</span></h2>
+        </div>
+
+        <div class="process__grid">
+          <div class="step" data-reveal>
+            <span class="step__dot"></span>
+            <span class="step__num">Шаг 01</span>
+            <h3 class="step__title">Discovery</h3>
+            <p class="step__text">Погружаемся в бизнес: интервью, метрики, конкуренты, аудитория. Формулируем цель, которая измеряется.</p>
+          </div>
+          <div class="step" data-reveal style="--rd:.12s">
+            <span class="step__dot"></span>
+            <span class="step__num">Шаг 02</span>
+            <h3 class="step__title">Стратегия</h3>
+            <p class="step__text">Арка продукта, структура, позиционирование и контент-план. Согласовываем дорожную карту до первого пикселя.</p>
+          </div>
+          <div class="step" data-reveal style="--rd:.24s">
+            <span class="step__dot"></span>
+            <span class="step__num">Шаг 03</span>
+            <h3 class="step__title">Дизайн</h3>
+            <p class="step__text">Концепции → прототипы → дизайн-система. Анимации и микро-взаимодействия прописываем с первого экрана.</p>
+          </div>
+          <div class="step" data-reveal style="--rd:.36s">
+            <span class="step__dot"></span>
+            <span class="step__num">Шаг 04</span>
+            <h3 class="step__title">Запуск</h3>
+            <p class="step__text">Разработка, тесты, деплой и growth-цикл после релиза. Измеряем, гипотезируем, улучшаем.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= REVIEWS ======= -->
+      <section class="section reviews" id="reviews">
+        <div class="section-head">
+          <span class="section-head__num" data-reveal>05</span>
+          <span class="section-head__line" data-reveal style="--rd:.1s"></span>
+          <h2 class="section-head__title" data-reveal style="--rd:.15s">Слово <span class="grad">клиентам</span></h2>
+        </div>
+
+        <div class="tst" data-reveal>
+          <div class="tst__viewport">
+            <div class="tst__track" id="tstTrack">
+              <figure class="tst__slide">
+                <blockquote class="tst__quote">«ПРИЗМА переупаковала наш интернет-магазин за 9 недель. Конверсия выросла в 2,4 раза, а средний чек — на 31%. Это лучшая инвестиция года.»</blockquote>
+                <figcaption class="tst__author">
+                  <span class="tst__avatar" aria-hidden="true">А</span>
+                  <span class="tst__meta"><b>Анна Литвинова</b><i>Директор по продукту, AURA</i></span>
+                </figcaption>
+              </figure>
+              <figure class="tst__slide">
+                <blockquote class="tst__quote">«Команда закрыла всё под ключ: от стратегии до продакшена. Dashboard, которым реально пользуются сотрудники — редкость, а здесь так вышло.»</blockquote>
+                <figcaption class="tst__author">
+                  <span class="tst__avatar" aria-hidden="true">Д</span>
+                  <span class="tst__meta"><b>Дмитрий Соколов</b><i>CEO, NEBULA</i></span>
+                </figcaption>
+              </figure>
+              <figure class="tst__slide">
+                <blockquote class="tst__quote">«Лендинг собрал раунд за 11 дней. Инвесторы писали, что сайт производит впечатление на уровне Silicon Valley. Мы уже готовимся к следующему продукту вместе.»</blockquote>
+                <figcaption class="tst__author">
+                  <span class="tst__avatar" aria-hidden="true">М</span>
+                  <span class="tst__meta"><b>Мария Ветрова</b><i>CMO, KOSMO</i></span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="tst__ctrl">
+            <div class="tst__dots" id="tstDots" role="tablist" aria-label="Отзывы"></div>
+            <div class="tst__nav">
+              <button class="tst__btn" id="tstPrev" aria-label="Предыдущий отзыв">←</button>
+              <button class="tst__btn" id="tstNext" aria-label="Следующий отзыв">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= CTA ======= -->
+      <section class="cta" id="contact">
+        <div class="aurora aurora--3" aria-hidden="true"></div>
+        <div class="cta__ghost" aria-hidden="true">PRIZMA</div>
+        <div class="cta__inner">
+          <span class="cta__kicker" data-reveal>✦ Свободные слоты на октябрь</span>
+          <h2 class="cta__title" data-reveal style="--rd:.1s">Готовы создать<br><span class="grad grad--2">что-то великое?</span></h2>
+          <p class="cta__text" data-reveal style="--rd:.2s">Расскажите о задаче — за 24 часа пришлём план работ, сроки и смету.</p>
+          <div class="cta__actions" data-reveal style="--rd:.3s">
+            <a href="mailto:hello@prizma.studio" class="btn btn--primary btn--xl magnetic">hello@prizma.studio <span class="btn__arrow">→</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+      <a href="#hero" class="footer__word" aria-label="Наверх">ПРИЗМА</a>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <span class="footer__col-title">Навигация</span>
+          <a href="#about">Студия</a>
+          <a href="#services">Услуги</a>
+          <a href="#works">Кейсы</a>
+          <a href="#process">Процесс</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Соцсети</span>
+          <a href="#">Telegram</a>
+          <a href="#">Behance</a>
+          <a href="#">Dribbble</a>
+          <a href="#">GitHub</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Контакты</span>
+          <a href="mailto:hello@prizma.studio">hello@prizma.studio</a>
+          <a href="tel:+79000000000">+7 900 000-00-00</a>
+          <span class="footer__plain">Москва, Россия</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Студия «ПРИЗМА». Все права защищены.</span>
+        <span class="footer__made">Сделано с ✦ в Москве</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ======= TO TOP ======= -->
+  <button class="to-top" id="toTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19 V5 M5 12 L12 5 L19 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
